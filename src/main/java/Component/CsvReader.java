@@ -1,3 +1,5 @@
+package Component;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
  */
 public class CsvReader {
 
-    public List<String> Reader(String fileName){
+    public List<String> read(String fileName){
         String line;
         BufferedReader br = readFile(fileName);
         List<String> rows = new ArrayList<String>();

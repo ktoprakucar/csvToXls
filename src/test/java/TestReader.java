@@ -1,3 +1,4 @@
+import Component.CsvReader;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,7 +25,7 @@ public class TestReader {
 
     @Test
     public void test_read_file(){
-        linesCovered = reader.Reader(fileName);
+        linesCovered = reader.read(fileName);
         assertEquals(3, linesCovered.size());
         //assertEquals("david;beckham;7", linesCovered.get(0));
         assertEquals("michael;owen;10", linesCovered.get(1));
