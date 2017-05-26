@@ -29,7 +29,6 @@ public class TestReader {
         //assertEquals("david;beckham;7", linesCovered.get(0));
         assertEquals("michael;owen;10", linesCovered.get(1));
         assertEquals("steven;gerrard;8", linesCovered.get(2));
-
     }
 
 
