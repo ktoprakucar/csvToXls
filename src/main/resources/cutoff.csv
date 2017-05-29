@@ -1,0 +1,10 @@
+transactionDate;transactionType;isAfterSettlement;paymentTxId;paymentId;conversationId;paymentPhase;paymentGroup;price;paidPrice;transactionCurrency;installment;binNumber;cardFamily;cardAssociation;cardType;isThreeDs;buyerName;buyerSurname;buyerEmail;paymentBuyerId;iyziCommissionRateAmount;iyziCommissionFee;parity;settlementCurrency;iyziConversionRateAmount;merchantPayoutAmount;connectorType;posOrderId;posName;subMerchantKey;subMerchantEmail;subMerchantName;subMerchantPayoutAmount;settlementReferenceCode;settlementResolvedDate
+16/12/2016 10:17;PAYMENT;;12467;13784;123456789;AUTH;PRODUCT;0.3000;1,5000;TRY;1;492130;World;VISA;CREDIT_CARD;0;Yigit;Test;yigit.kasimagaoglu@iyzico.com;BY789;0,0443;0,2589;0,3418;USD;0,0103;0,3989;IYZI_POS;;;;;;;NylVDALO;17/12/2016
+16/12/2016 10:17;PAYMENT;;12470;13784;123456789;AUTH;PRODUCT;0.5000;2,5000;TRY;1;492130;World;VISA;CREDIT_CARD;0;Yigit;Test;yigit.kasimagaoglu@iyzico.com;BY789;0,0738;0,4315;0,3418;USD;0,0171;0,6648;IYZI_POS;;;;;;;NylVDALO;17/12/2016
+16/12/2016 10:17;PAYMENT;;12473;13784;123456789;AUTH;PRODUCT;0.2000;1,0000;TRY;1;492130;World;VISA;CREDIT_CARD;0;Yigit;Test;yigit.kasimagaoglu@iyzico.com;BY789;0,0295;0,1726;0,3418;USD;0,0068;0,2659;IYZI_POS;;;;;;;NylVDALO;17/12/2016
+transactionCurrency;totalPayments;totalPaymentAmount;totalCancels;totalCancelAmount;totalRefunds;totalRefundAmount;netAmount;;;;;;;;;;;;;0,5127;0,01514174;0,08849202;;;0,0103;0,3989;0,51283376;;;;;;;;
+TRY;3;5;0;0;0;0;5;;;;;;;;;;;;;0,8545;0,02522484;0,1474867;;;0,0171;0,6648;0,85461154;;;;;;;;
+settlementCurrency;totalMerchantPayoutAmount;;;;;;;;;;;;;;;;;;;0,3418;0,0100831;0,05899468;;;0,0068;0,2659;0,34177778;;;;;;;;
+USD;1,33;;;;;;;;;;;;;;;;;;;;0,029533333;0,2949734;;;0,020089721;1,3296;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;0,02952;;;;0,020011703;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;0,0295;;;;0,019894675;;;;;;;;;;

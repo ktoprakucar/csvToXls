@@ -1,6 +1,6 @@
-import Component.CsvReader;
-import Component.XlsWriter;
-import Converter.CsvToXls;
+
+
+import converter.CsvToXls;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -18,8 +18,15 @@ public class IntegrationTest {
 
     @Ignore
     @Test
-    public void test_converter(){
+    public void test_converter_test(){
         converter.convertCsvToXlsAndSave("test.csv", "test");
+    }
+
+
+    @Ignore
+    @Test
+    public void test_converter_settlement(){
+        converter.convertCsvToXlsAndSave("settlement-4850-20170119132631-TRY.csv", "settlement");
     }
 
 }

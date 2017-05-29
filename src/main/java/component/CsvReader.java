@@ -1,4 +1,4 @@
-package Component;
+package component;
 
 import java.io.*;
 import java.util.ArrayList;

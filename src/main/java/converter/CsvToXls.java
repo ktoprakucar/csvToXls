@@ -1,9 +1,9 @@
-package Converter;
+package converter;
 
 
-import Component.CsvReader;
-import Component.Parser;
-import Component.XlsWriter;
+import component.CsvReader;
+import component.Parser;
+import component.XlsWriter;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package Component;
+package component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ public class Parser {
     public static List<List<String>> parseToFields(List<String> rows){
         List<List<String>> fieldsRowByRow = new ArrayList<List<String>>();
         for(String line : rows){
-            fieldsRowByRow.add(Arrays.asList(line.split("\\s*;\\s*")));
+            fieldsRowByRow.add(Arrays.asList(line.split("\\s*,\\s*")));
         }
         return fieldsRowByRow;
     }

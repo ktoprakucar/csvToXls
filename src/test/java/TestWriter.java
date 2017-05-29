@@ -1,4 +1,4 @@
-import Component.XlsWriter;
+import component.XlsWriter;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

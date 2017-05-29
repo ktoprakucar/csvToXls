@@ -1,0 +1,13 @@
+transactionDate,transactionType,isAfterSettlement,paymentTxId,paymentId,conversationId,paymentPhase,paymentGroup,price,paidPrice,transactionCurrency,installment,binNumber,cardFamily,cardAssociation,cardType,isThreeDs,buyerName,buyerSurname,buyerEmail,paymentBuyerId,iyziCommissionRateAmount,iyziCommissionFee,parity,settlementCurrency,iyziConversionRateAmount,merchantPayoutAmount,connectorType,posOrderId,posName,subMerchantKey,subMerchantEmail,subMerchantName,subMerchantPayoutAmount,settlementReferenceCode,settlementResolvedDate
+2017-01-05 16:46:25,PAYMENT,,12986,14132,123456789,AUTH,PRODUCT,0.3000,0.3000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0150,0.0900,1.0000,TRY,0.0000,0.1950,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+2017-01-05 16:46:25,PAYMENT,,12989,14132,123456789,AUTH,PRODUCT,0.5000,0.5000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0250,0.1500,1.0000,TRY,0.0000,0.3250,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+2017-01-05 16:46:25,PAYMENT,,12992,14132,123456789,AUTH,PRODUCT,0.2000,0.2000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0100,0.0600,1.0000,TRY,0.0000,0.1300,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+2017-01-05 16:48:18,PAYMENT,,12995,14135,123456789,AUTH,PRODUCT,0.3000,0.3000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0150,0.0900,1.0000,TRY,0.0000,0.1950,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+2017-01-05 16:48:18,PAYMENT,,12998,14135,123456789,AUTH,PRODUCT,0.5000,0.5000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0250,0.1500,1.0000,TRY,0.0000,0.3250,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+2017-01-05 16:48:18,PAYMENT,,13001,14135,123456789,AUTH,PRODUCT,0.2000,0.2000,TRY,1,540668,Maximum,MASTER_CARD,CREDIT_CARD,0,Yigit,Test,yigit.kasimagaoglu@iyzico.com,BY789,0.0100,0.0600,1.0000,TRY,0.0000,0.1300,IYZI_POS,,,,,,,wrCeqDak,2017-01-06
+
+transactionCurrency,totalPayments,totalPaymentAmount,totalCancels,totalCancelAmount,totalRefunds,totalRefundAmount,netAmount
+TRY,6,2.00,0,0.00,0,0.00,2.00
+
+settlementCurrency,totalMerchantPayoutAmount
+TRY,1.30

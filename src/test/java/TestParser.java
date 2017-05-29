@@ -1,4 +1,4 @@
-import Component.Parser;
+import component.Parser;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,9 +16,9 @@ public class TestParser {
     @Before
     public void setUp(){
         rows = new ArrayList<String>();
-        rows.add("guy;ritchie;british");
-        rows.add("pierre;jeunet;french");
-        rows.add("turgut;ozakman;turkish");
+        rows.add("guy,ritchie,british");
+        rows.add("pierre,jeunet,french");
+        rows.add("turgut,ozakman,turkish");
     }
 
     @Test
