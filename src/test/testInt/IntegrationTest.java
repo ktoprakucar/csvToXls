@@ -1,6 +1,6 @@
 
 
-import converter.CsvToXls;
+import processor.CsvToXls;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -28,5 +28,6 @@ public class IntegrationTest {
     public void test_converter_settlement(){
         converter.convertCsvToXlsAndSave("settlement-4850-20170119132631-TRY.csv", "settlement");
     }
+
 
 }
