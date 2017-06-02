@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.io.File;
+
 /**
  * Created by toprak.ucar on 26/05/2017.
  */
@@ -18,15 +20,8 @@ public class IntegrationTest {
 
     @Ignore
     @Test
-    public void test_converter_test(){
-        converter.convertCsvToXlsAndSave("test.csv", "test");
-    }
-
-
-    @Ignore
-    @Test
-    public void test_converter_settlement(){
-        converter.convertCsvToXlsAndSave("settlement-4850-20170119132631-TRY.csv", "settlement");
+    public void test_save_as_an_excel_file(){
+        File file = converter.convertCsvToXlsAndSave("settlement-4850-20170119132631-TRY.csv", "settlement");
     }
 
 

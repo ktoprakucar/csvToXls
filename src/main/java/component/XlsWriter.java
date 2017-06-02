@@ -1,11 +1,13 @@
 package component;
 
-import org.apache.commons.codec.binary.StringUtils;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.formula.functions.BaseNumberUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Row;
 
 import java.io.File;
@@ -22,7 +24,7 @@ public class XlsWriter {
     HSSFWorkbook workbook;
     HSSFSheet sheet;
     Converter converter;
-    ;
+
 
     public XlsWriter() {
         workbook = new HSSFWorkbook();
@@ -30,7 +32,27 @@ public class XlsWriter {
         converter = new Converter();
     }
 
-    public void writeToXlsFile(String fileName, List<List<String>> rows) {
+    public File writeToXlsFile(String fileName, List<List<String>> rows) {
+        CellStyle cellStyle = workbook.createCellStyle();
+        CreationHelper createHelper = workbook.getCreationHelper();
+        File xlsFile = new File(generateFileName(fileName));
+        generateXlsData(rows, cellStyle, createHelper);
+        saveXlsDataToFile(xlsFile);
+        return xlsFile;
+
+    }
+
+    private void saveXlsDataToFile(File xlsFile) {
+        try {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            workbook.write(bos);
+            FileUtils.writeByteArrayToFile(xlsFile, bos.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void generateXlsData(List<List<String>> rows, CellStyle cellStyle, CreationHelper createHelper) {
         int rowNumber = 0;
         int cellNumber;
         Row row;
@@ -39,14 +61,33 @@ public class XlsWriter {
             cellNumber = 0;
             for (String field : data) {
                 Cell cell = row.createCell(cellNumber++);
-                if (isNumericValue(field))
-                    cell.setCellValue(converter.convertFieldToNumericValue(field));
-                else
-                    cell.setCellValue(field);
+                saveDataToCells(cellStyle, createHelper, field, cell);
             }
         }
-        createFileAndWrite(fileName);
+    }
 
+    private void saveDataToCells(CellStyle cellStyle, CreationHelper createHelper, String field, Cell cell) {
+        if (isNumericValue(field))
+            cell.setCellValue(converter.convertFieldToNumericValue(field));
+        else if (isDateValueWithTime(field)) {
+            cellStyle.setDataFormat(
+                    createHelper.createDataFormat().getFormat("yyyy-MM-dd HH:mm:ss"));
+            cell.setCellValue(converter.convertFieldToDateValue(field));
+            cell.setCellStyle(cellStyle);
+        }
+        else if(isDateWithoutTime(field)){
+            cellStyle.setDataFormat(
+                    createHelper.createDataFormat().getFormat("yyyy-MM-dd"));
+            cell.setCellValue(converter.convertFieldToDateValueWithoutTime(field));
+            cell.setCellStyle(cellStyle);
+        }
+        else
+            cell.setCellValue(field);
+    }
+
+
+    public String generateFileName(String fileName) {
+        return fileName + ".xls";
     }
 
     public boolean isNumericValue(String field) {
@@ -55,20 +96,15 @@ public class XlsWriter {
         return false;
     }
 
-    private void createFileAndWrite(String fileName) {
-        FileOutputStream out = null;
-        try {
-            out = new FileOutputStream(new File(generateFileName(fileName)));
-            workbook.write(out);
-            out.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public boolean isDateValueWithTime(String field) {
+        if (Pattern.matches("\\d{4}\\-\\d{2}\\-\\d{2}\\s\\d{2}\\:\\d{2}\\:\\d{2}", field))
+            return true;
+        return false;
     }
 
-    public String generateFileName(String fileName) {
-        return fileName + ".xls";
+    public boolean isDateWithoutTime(String field) {
+        if (Pattern.matches("\\d{4}\\-\\d{2}\\-\\d{2}", field))
+            return true;
+        return false;
     }
 }

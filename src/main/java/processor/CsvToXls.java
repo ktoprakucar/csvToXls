@@ -5,6 +5,7 @@ import component.CsvReader;
 import component.Parser;
 import component.XlsWriter;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -19,9 +20,9 @@ public class CsvToXls {
         writer = new XlsWriter();
     }
 
-    public void convertCsvToXlsAndSave(String csvFile, String xlsFile){
+    public File convertCsvToXlsAndSave(String csvFile, String xlsFile){
         List<String> lines = reader.read(csvFile);
         List<List<String>> rows = Parser.parseToFields(lines);
-        writer.writeToXlsFile(xlsFile, rows);
+        return writer.writeToXlsFile(xlsFile, rows);
     }
 }

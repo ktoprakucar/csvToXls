@@ -26,10 +26,8 @@ public class TestReader {
     @Test
     public void test_read_file(){
         linesCovered = reader.read(fileName);
-        assertEquals(3, linesCovered.size());
-        //assertEquals("david;beckham;7", linesCovered.get(0));
-        assertEquals("michael;owen;10", linesCovered.get(1));
-        assertEquals("steven;gerrard;8", linesCovered.get(2));
+        assertEquals(2, linesCovered.size());
+        assertEquals("1903-03-19 00:00:25,1990-12-18", linesCovered.get(1));
     }
 
 

@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
@@ -101,6 +100,37 @@ public class TestWriter {
         Boolean isNumeric = writer.isNumericValue(text);
         assertTrue(isNumeric);
     }
+
+    @Test
+    public void test_correct_date_format(){
+        String text = "1903-19-03 22:11:11";
+        boolean isDate = writer.isDateValueWithTime(text);
+        assertTrue(isDate);
+    }
+
+    @Test
+    public void test_wrong_date_format_with_miliseconds(){
+        String text = "1903-19-03 22:11:11.123";
+        boolean isDate = writer.isDateValueWithTime(text);
+        assertFalse(isDate);
+    }
+
+
+    @Test
+    public void test_date_format_without_time(){
+        String text = "1903-19-03";
+        boolean isDate = writer.isDateWithoutTime(text);
+        assertTrue(isDate);
+    }
+
+    @Test
+    public void test_wrong_date_format_with_wrong_order_without_time(){
+        String text = "19-03-1903";
+        boolean isDate = writer.isDateWithoutTime(text);
+        assertFalse(isDate);
+    }
+
+
 
 
 }
